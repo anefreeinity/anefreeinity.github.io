@@ -46,7 +46,7 @@ export class HomeComponent {
     }
     data.selectState = true;
     this.prevSelectedWindow = data;
-    window.alert(JSON.stringify(data));
+    //window.alert(JSON.stringify(data));
   }
 }
 
