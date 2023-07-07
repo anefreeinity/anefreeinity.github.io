@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { CanvasHomeComponent } from './canvas/canvas-home/canvas-home.component';
+import { OffcanvasCanvasComponent } from './off-canvas-content/offcanvas-canvas/offcanvas-canvas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CanvasHomeComponent,
+    OffcanvasCanvasComponent,
   ],
   imports: [
     BrowserModule,
