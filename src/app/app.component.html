@@ -46,7 +46,9 @@
               <li>
                 <a
                   ngbDropdownItem
-                  class="dropdown-item"
+                  [ngClass]="
+                    item.selectState ? 'dropdown-item active' : 'dropdown-item'
+                  "
                   href="#"
                   *ngFor="let item of data"
                   (click)="dropDown($event, item)"
