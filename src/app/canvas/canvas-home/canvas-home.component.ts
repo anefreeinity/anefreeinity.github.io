@@ -153,15 +153,16 @@ export class CanvasHomeComponent {
     if (!$event.ctrlKey) return;
     $event.preventDefault();
 
-    let scale = $event.deltaY * 0.8;
-    if (scale < -20) {
-      this.pinchFactor = -20;
-    } else if (scale > 20) {
-      this.pinchFactor = 20;
+    let scale = $event.deltaY * 1;
+    if (scale < -30) {
+      this.pinchFactor = -30;
+    } else if (scale > 30) {
+      this.pinchFactor = 30;
     } else {
       this.pinchFactor = scale;
     }
     this.initializeCanvas();
+    //https://levelup.gitconnected.com/how-to-implement-pinch-to-zoom-on-the-browser-in-angular-6ad56ce54df4
   }
 
   getCood(event: any) {
