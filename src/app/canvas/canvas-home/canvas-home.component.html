@@ -1,1 +1,6 @@
-<canvas id="canvas" #canvas (window:resize)="onResizeWin($event)"></canvas>
+<canvas
+  (mousemove)="getCood($event)"
+  id="canvas"
+  #canvas
+  (window:resize)="onResizeWin($event)"
+></canvas>

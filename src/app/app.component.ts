@@ -5,6 +5,7 @@ import {
   NgbOffcanvas,
   OffcanvasDismissReasons,
 } from '@ng-bootstrap/ng-bootstrap';
+import { CanvasScalePosService } from './services/canvas-scale-pos.service';
 
 @Component({
   selector: 'app-root',
@@ -15,12 +16,34 @@ export class AppComponent {
   data: DrpDwn[] = [];
   public isCollapsed = true;
   prevSelectedWindow: DrpDwn | null = null;
+  scale: number = 50;
+  xCood: number = 0;
+  yCood: number = 0;
 
-  constructor(private router: Router, private offcanvasService: NgbOffcanvas) {
+  constructor(
+    private router: Router,
+    private offcanvasService: NgbOffcanvas,
+    private canvasScalePosService: CanvasScalePosService
+  ) {
     this.data = components;
     this.prevSelectedWindow = this.data[0];
     this.prevSelectedWindow.selectState = true;
     this.router.navigate(['/home']);
+    this.canvasUtil();
+  }
+
+  canvasUtil() {
+    this.canvasScalePosService.scale$.subscribe((scale) => {
+      this.scale = scale;
+    });
+
+    this.canvasScalePosService.xCood$.subscribe((x) => {
+      this.xCood = x;
+    });
+
+    this.canvasScalePosService.yCood$.subscribe((y) => {
+      this.yCood = y;
+    });
   }
 
   dropDown(event: any, data: DrpDwn) {
