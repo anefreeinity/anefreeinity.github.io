@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { CanvasHomeComponent } from './canvas/canvas-home/canvas-home.component';
 import { OffcanvasCanvasComponent } from './off-canvas-content/offcanvas-canvas/offcanvas-canvas.component';
+import { PinchZoomDirective } from './directive/pinch-zoom.directive';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { OffcanvasCanvasComponent } from './off-canvas-content/offcanvas-canvas/
     HomeComponent,
     CanvasHomeComponent,
     OffcanvasCanvasComponent,
+    PinchZoomDirective,
   ],
   imports: [
     BrowserModule,

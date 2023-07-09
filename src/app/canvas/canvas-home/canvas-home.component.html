@@ -3,4 +3,9 @@
   id="canvas"
   #canvas
   (window:resize)="onResizeWin($event)"
+  appPinchZoom
+  (onPinch$)="onPinch($event)"
+  [scaleFactor]="scaleFactor"
+  [zoomThreshold]="zoomThreshold"
+  [initialZoom]="initialZoom"
 ></canvas>
