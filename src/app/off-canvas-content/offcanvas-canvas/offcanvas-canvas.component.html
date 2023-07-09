@@ -1,5 +1,5 @@
 <div class="offcanvas-header">
-  <h4 class="offcanvas-title" id="offcanvas-basic-title">Project Details</h4>
+  <h4 class="offcanvas-title" id="offcanvas-basic-title">Canvas</h4>
   <button
     type="button"
     class="btn-close"
@@ -9,32 +9,77 @@
 </div>
 <div class="offcanvas-body">
   <form>
-    <div class="mb-3">
-      <label for="dateOfBirth">Date of birth</label>
-      <div class="input-group">
-        <input
-          id="dateOfBirth"
-          class="form-control"
-          placeholder="yyyy-mm-dd"
-          name="dp"
-          ngbDatepicker
-          #dp="ngbDatepicker"
-        />
-        <button
-          class="btn btn-outline-secondary bi bi-calendar3"
-          (click)="dp.toggle()"
-          type="button"
-        ></button>
+    <div class="container-fluid">
+      <div style="padding-bottom: 10px" class="row">
+        <div class="col">{{ scaleLabel }}:</div>
+        <div class="col">
+          <div ngbDropdown container="body">
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-sm"
+              ngbDropdownToggle
+            >
+              {{ currentSelectedScale }}
+            </button>
+            <div ngbDropdownMenu>
+              <button
+                (click)="scaleSelectionChange(scale)"
+                ngbDropdownItem
+                *ngFor="let scale of scaleValues"
+              >
+                {{ scale }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding-bottom: 10px" class="row">
+        <div class="col">{{ scaleFactorLabel }}:</div>
+        <div class="col">
+          <div ngbDropdown container="body">
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-sm"
+              ngbDropdownToggle
+            >
+              {{ currentSelectedscaleFactor }}
+            </button>
+            <div ngbDropdownMenu>
+              <button
+                (click)="scaleFactorSelectionChange(scaleFactor)"
+                ngbDropdownItem
+                *ngFor="let scaleFactor of scaleFactorValues"
+              >
+                {{ scaleFactor }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding-bottom: 10px" class="row">
+        <div class="col">{{ zoomThresholdLabel }}:</div>
+        <div class="col">
+          <div ngbDropdown container="body">
+            <button
+              type="button"
+              class="btn btn-outline-primary btn-sm"
+              ngbDropdownToggle
+            >
+              {{ currentSelectedzoomThreshold }}
+            </button>
+            <div ngbDropdownMenu>
+              <button
+                (click)="zoomThresholdSelectionChange(zoomThreshold)"
+                ngbDropdownItem
+                *ngFor="let zoomThreshold of zoomThresholdVlues"
+              >
+                {{ zoomThreshold }}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </form>
-  <div class="text-end">
-    <button
-      type="button"
-      class="btn btn-outline-dark"
-      (click)="offcanvas.close('Save click')"
-    >
-      Save
-    </button>
-  </div>
+  <div class="text-end"></div>
 </div>

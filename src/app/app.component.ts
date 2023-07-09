@@ -34,7 +34,7 @@ export class AppComponent {
 
   canvasUtil() {
     this.canvasScalePosService.scale$.subscribe((scale) => {
-      this.scale = scale;
+      this.scale = scale!;
     });
 
     this.canvasScalePosService.xCood$.subscribe((x) => {

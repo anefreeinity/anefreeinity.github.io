@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { CanvasHomeComponent } from './canvas/canvas-home/canvas-home.component';
 import { OffcanvasCanvasComponent } from './off-canvas-content/offcanvas-canvas/offcanvas-canvas.component';
 import { PinchZoomDirective } from './directive/pinch-zoom.directive';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,13 @@ import { PinchZoomDirective } from './directive/pinch-zoom.directive';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
+    MatSelectModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'canvas-home', component: CanvasHomeComponent },
     ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

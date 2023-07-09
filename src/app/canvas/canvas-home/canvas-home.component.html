@@ -2,10 +2,12 @@
   (mousemove)="getCood($event)"
   id="canvas"
   #canvas
+  id="myCanvas"
   (window:resize)="onResizeWin($event)"
   appPinchZoom
   (onPinch$)="onPinch($event)"
   [scaleFactor]="scaleFactor"
   [zoomThreshold]="zoomThreshold"
   [initialZoom]="initialZoom"
+  (click)="setOrigin($event)"
 ></canvas>
